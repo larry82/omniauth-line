@@ -13,6 +13,11 @@ module OmniAuth
         token_url: '/oauth2/v2.1/token'
       }
 
+      def request_phase
+        options[:authorize_params].merge(bot_prompt: options['bot_prompt'])
+        super
+      end
+
       # host changed
       def callback_phase
         options[:client_options][:site] = 'https://api.line.me'
