@@ -6,7 +6,9 @@ module OmniAuth
     class Line < OmniAuth::Strategies::OAuth2
       option :name, 'line'
       option :scope, 'profile openid email'
+      option :bot_prompt, 'aggressive'
 
+      
       option :client_options, {
         site: 'https://access.line.me',
         authorize_url: '/oauth2/v2.1/authorize',
